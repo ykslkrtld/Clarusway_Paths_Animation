@@ -18,7 +18,7 @@ header img{
     transition-timing-function: ease-in-out;
 }
 
-.info:hover{
+header img:hover{
     /* rotate: 360deg;
     scale: 1.5; */
     transform: rotate(360deg) scale(1.5);
