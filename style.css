@@ -41,12 +41,28 @@ header div a{
     left: 0;
     bottom: 0;
     width: 0;
-    height: 2px; 
+    height: 5px; 
     background-color: darkorange; 
-    transition: width 0.5s ease-out;
+    transition: width 1s ease-out;
+}
+
+.info::before{
+    display: block;
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 5px; 
+    background-color: darkorange; 
+    transition: width 1s ease-out;
 }
 
 .info:hover::after {
+    width: 100%;
+}
+
+.info:hover::before {
     width: 100%;
 }
 
@@ -68,7 +84,7 @@ main h1{
     font-size: 4rem;
     text-align: center;
     margin: 3rem 0;
-    animation: baslik 0.6s ease-out 3 forwards;
+    animation: baslik 1s ease-out 3 forwards;
 }
 
 main div{
@@ -83,6 +99,7 @@ main div{
     border: none;
     border-radius: 10px;
     animation: fotolar 4s ease-out infinite both;
+    transition: all 3s;
 }
 
 .photos:hover img{
@@ -90,9 +107,14 @@ main div{
 }
 
 .photos img:hover{
-    /* transform: scale(2); */
-    /* transition: all 2s; */
-    animation: foto-tik 2s ease-in-out 2 alternate forwards;
+    /* animation: foto-tik 2s ease-in-out forwards; */
+    transform: scale(1.7);
+    position: relative;
+    z-index: 2;
+}
+
+.photos img:not(:hover){
+    transform: scale(1);
 }
   
 footer{
@@ -134,11 +156,11 @@ footer *:hover{
     }
 }
 
-@keyframes foto-tik{
+/* @keyframes foto-tik{
     100%{
         transform: scale(1.8);
     }
-}
+} */
 
 @media screen and (max-width: 600px){
     header div .menu{
