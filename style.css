@@ -1,0 +1,180 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem;
+}
+
+header img{
+    width: 50 px;
+    height: 50px;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+}
+
+header img:hover{
+    /* rotate: 360deg;
+    scale: 1.5; */
+    transform: rotate(360deg) scale(1.5);
+}
+
+header div a{
+    text-decoration: none;
+    color: black;
+    margin: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.info::after{
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; 
+    background-color: darkorange; 
+    transition: width 0.5s ease-out;
+}
+
+.info:hover::after {
+    width: 100%;
+}
+
+.info:hover{
+    color: darkorange;
+}
+
+header div .menu, .multiple{
+    display: none;
+    font-size: 2.5rem;
+}
+
+main{
+    margin-top: 10rem;
+}
+
+main h1{
+    color: darkorange;
+    font-size: 4rem;
+    text-align: center;
+    margin: 3rem 0;
+    animation: baslik 0.6s ease-out 3 forwards;
+}
+
+main div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.photos img{
+    width: 200px;
+    height: 200px;
+    border: none;
+    border-radius: 10px;
+    animation: fotolar 4s ease-out infinite both;
+}
+
+.photos:hover img{
+    animation: none;
+}
+
+.photos img:hover{
+    /* transform: scale(2); */
+    /* transition: all 2s; */
+    animation: foto-tik 2s ease-in-out 2 alternate forwards;
+}
+  
+footer{
+    display: flex;
+    justify-content: end;
+    margin: 8rem 2rem;
+    gap: 2rem;
+    font-size: 2rem;
+}
+
+footer *{
+    transition-property: all;
+    transition-duration: 0.8s;
+    transition-timing-function: linear;
+}
+
+footer *:hover{
+    transform: rotate(360deg);
+    color: darkorange;
+}
+
+@keyframes baslik{
+    0%{
+        transform: translateY(-400px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes fotolar{
+    0%{
+        transform: scale(0.9);
+    }
+    
+    100%{
+        transform: scale(1.4);
+    }
+}
+
+@keyframes foto-tik{
+    100%{
+        transform: scale(1.8);
+    }
+}
+
+@media screen and (max-width: 600px){
+    header div .menu{
+        display: block;
+        font-size: 2.5rem;
+    }
+
+    header .info{
+        display: none;
+    }
+
+    header div:hover{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    header div:hover .menu{
+        display: none;
+    }
+
+    header div:hover .multiple{
+        display: contents;
+        font-size: 2.5rem;
+    }
+
+    header div:hover .info{
+        display: contents;
+    }
+    
+    main{
+        margin-top: 1rem;
+    }
+
+    main h1{
+        font-size: 3rem;
+    }
+}
